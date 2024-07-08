@@ -1,0 +1,45 @@
+Epoch [1/10], Loss: 0.3352, Accuracy: 83.98%
+Validation Accuracy: 92.32%
+Validation loss decreased (inf --> 0.176161).  Saving model ...
+Saving model with validation accuracy: 92.32%
+Epoch [2/10], Loss: 0.2280, Accuracy: 90.11%
+Validation Accuracy: 95.70%
+Validation loss decreased (0.176161 --> 0.106532).  Saving model ...
+Saving model with validation accuracy: 95.70%
+Epoch [3/10], Loss: 0.1745, Accuracy: 92.85%
+Validation Accuracy: 96.45%
+Validation loss decreased (0.106532 --> 0.103269).  Saving model ...
+Saving model with validation accuracy: 96.45%
+Epoch [4/10], Loss: 0.1430, Accuracy: 94.30%
+Validation Accuracy: 96.74%
+Validation loss decreased (0.103269 --> 0.096046).  Saving model ...
+Saving model with validation accuracy: 96.74%
+Epoch [5/10], Loss: 0.1275, Accuracy: 94.93%
+Validation Accuracy: 96.82%
+Validation loss decreased (0.096046 --> 0.090767).  Saving model ...
+Saving model with validation accuracy: 96.82%
+Epoch [6/10], Loss: 0.1135, Accuracy: 95.46%
+Validation Accuracy: 96.71%
+EarlyStopping counter: 1 out of 5
+Epoch [7/10], Loss: 0.0991, Accuracy: 96.13%
+Validation Accuracy: 96.04%
+EarlyStopping counter: 2 out of 5
+Epoch [8/10], Loss: 0.0956, Accuracy: 96.30%
+Validation Accuracy: 95.67%
+EarlyStopping counter: 3 out of 5
+Epoch [9/10], Loss: 0.0861, Accuracy: 96.67%
+Validation Accuracy: 97.34%
+EarlyStopping counter: 4 out of 5
+Saving model with validation accuracy: 97.34%
+Epoch [10/10], Loss: 0.0835, Accuracy: 96.85%
+Validation Accuracy: 97.26%
+EarlyStopping counter: 5 out of 5
+Early stopping
+Finished Training
+Test Accuracy: 95.63%
+Test Precision: 0.7439
+Test Recall: 0.6421
+Test F1 Score: 0.6778
+
+
+Total runtime: 6822.76 seconds
