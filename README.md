@@ -8,12 +8,10 @@ This repository contains the code and resources for melanoma detection using adv
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Data Preprocessing](#data-preprocessing)
   - [Training the Models](#training-the-models)
-  - [Evaluating the Models](#evaluating-the-models)
   - [Dashboard](#dashboard)
-- [Results](#results)
-- [License](#license)
+- [Training Your Own Model](#training-your-own-model)
+- 
 
 ## Introduction
 
@@ -25,7 +23,11 @@ We use two datasets from Kaggle:
 1. [Melanoma Balanced Dataset](https://www.kaggle.com/datasets/scipygaurav/melanoma-balanced-dataset)
 2. [Skin Lesion Analysis Towards Melanoma Detection](https://www.kaggle.com/datasets/wanderdust/skin-lesion-analysis-toward-melanoma-detection)
 
-Download these datasets and place them in a directory named `data/` within the root of the project.
+The two datasets need to be modified so that they fall into two classes: 
+- Benign
+- Malignant
+
+Once complete, move the data in the appropriate folders under the Image_data directory. Make sure not to rename or move the directories unless the paths are modified in the training scripts.
 
 ## Requirements
 
@@ -47,22 +49,36 @@ Download these datasets and place them in a directory named `data/` within the r
     python -m venv venv
     source venv/bin/activate  # On Windows use `venv\Scripts\activate`
     ```
+OR use IDE and env of choice. 
 
 3. Install the required packages:
     ```bash
     pip install -r requirements.txt
     ```
 
-4. Ensure you have the necessary CUDA and cuDNN versions installed.
+4. Ensure you have the necessary CUDA and Pytorch versions installed. If specific versions are unavailable for your system, alternative Pytorch versions should work. If your system does not contain an Nvidia GPU capable of CUDA, the scripts will automatically use the CPU in place. If this is the case, you should consider reducing the size of the dataset. 
 
 ## Usage
 
-### Data Preprocessing
+### Training the models
+Note: Place the data in the "Image_data" directory. Make sure to modify classes and hyperparameters if you would like to train other types of data. 
 
-Preprocess the dataset using the provided script:
+Train CLIP:
 ```bash
-python preprocess.py
+python clip_Train.py
 ```
 
-5. Train the models
-- Train CLIP: python train_clip.py
+Train ResNet-101:
+```bash
+python ResNet_Train.py
+```
+
+### Dashboard
+To run the dashboard locally:
+```bash
+streamlit run Melanomaly_Dashboard.py
+```
+
+### Training Your Own Model
+
+If you wish to train your own model with different data, it is advised you maintain the directory structure provided in this repo. Please keep in mind, our structure is using 2 classes of data and if you wished to add more classes, you will need to modify "num_classes = " found in the train and prediction scripts. 
