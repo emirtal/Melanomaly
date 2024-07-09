@@ -74,23 +74,34 @@ python ResNet_Train.py
 ```
 
 ### Optional: Use Trained Models
-If you do not wish to retrain the models, you can use the same trained models created during our study. 
+If you do not wish to retrain the models, you can use the same trained models created during our study. Due to file size limitations, we have segmented the large files into smaller parts. Follow the instructions below to reconstruct the original file.
 
-1. Open a Terminal:
-- Press Ctrl+Alt+T to open a terminal window.
+### For Unix-like Systems
 
-2. Navigate to the Directory:
-- Use the cd command to navigate to the directory where your .xz files are located. For example:
-```bash
-cd /Melanomaly/Models
-```
+1. **Reconstructing the File**
 
-3. Decompress Using xz:
-- Use the xz command with the -d option to decompress your files. For example:
-```bash
-xz -d best_clip_classifier.pth.xz
-xz -d best_resnet_classifer.pth.xz
-```
+   Navigate to the directory containing the file segments and run:
+
+   ```bash
+   cat segment_* > large_file_reconstructed.tar
+
+### For Windows: 
+
+1. **Reconstruting the File**
+   
+   ```bash
+   Open PowerShell and run the following script, replacing the paths as necessary:
+   $destinationFile = "C:\path\to\large_file_reconstructed.tar"
+   $sourceFolder = "C:\path\to\segments"
+   $segmentFiles = [System.IO.Directory]::GetFiles($sourceFolder, "segment_*")
+   $outputStream = [System.IO.File]::OpenWrite($destinationFile)
+   foreach ($segmentFile in $segmentFiles) {
+    $buffer = [System.IO.File]::ReadAllBytes($segmentFile)
+    $outputStream.Write($buffer, 0, $buffer.Length)
+   }
+   $outputStream.Close() ```
+
+***Place reconstructed files under /Melanomaly/Models***
 
 ### Dashboard
 To run the dashboard locally:
