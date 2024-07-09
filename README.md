@@ -40,7 +40,7 @@ Once complete, move the data in the appropriate folders under the Image_data dir
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/melanoma-detection.git
+    git clone [https://github.com/yourusername/melanoma-detection.git](https://github.com/emirtal/Melanomaly.git)
     cd melanoma-detection
     ```
 
