@@ -245,7 +245,7 @@ def train_and_evaluate(train_dataloader, validate_dataloader, num_epochs=10):
 kf = KFold(n_splits=5, shuffle=True, random_state=42)
 
 # Save console output to a text file
-log_file = '../Results/Final_results.txt'
+log_file = '../Results/CLIP_Final_results.txt'
 with open(log_file, 'w') as f:
     # Redirect stdout to the file
     sys.stdout = f

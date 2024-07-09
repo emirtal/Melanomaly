@@ -1,4 +1,3 @@
-# your_main_script.py
 import torch
 from torchvision import transforms
 import clip
@@ -20,12 +19,9 @@ transform = transforms.Compose([
 
 clip_classifier = CLIPClassifier(model, num_classes=2).to(device)
 
-# Load the saved state dict, adjusting keys if necessary
+# Load the saved state dict, adjusting keys
 state_dict = torch.load('../Models/best_clip_classifier.pth', map_location=device)
-# if "classifier.weight" in state_dict:
-#     state_dict["fc.weight"] = state_dict.pop("classifier.weight")
-# if "classifier.bias" in state_dict:
-#     state_dict["fc.bias"] = state_dict.pop("classifier.bias")
+
 # Handle the mismatched keys here
 for key in list(state_dict.keys()):
     # Replace fc.weight with classifier.weight and fc.bias with classifier.bias
@@ -46,8 +42,12 @@ def predict_CLIP(image):
     with torch.no_grad():
         img = img.to(device)
         outputs = clip_classifier(img)
-        likelihood_score = torch.softmax(outputs, dim=1)[0][1].item()  # Example: likelihood of class 1 (benign)
-        print(f'Likelihood score: {likelihood_score}')
+        likelihood_scores = torch.softmax(outputs, dim=1)[0].tolist()
+        likelihood_benign = likelihood_scores[0]
+        likelihood_malignant = likelihood_scores[1]
+        print(f'Likelihood scores: benign: {likelihood_benign:.4f}, malignant: {likelihood_malignant:.4f}')
+
+    return likelihood_benign, likelihood_malignant
 
     return likelihood_score
 

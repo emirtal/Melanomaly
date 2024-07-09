@@ -24,6 +24,7 @@ start_time = time.time()
 
 # Define data augmentations and transformations
 data_transforms = {
+data_transforms = {
     'train': transforms.Compose([
         transforms.RandomResizedCrop(224),
         transforms.RandomHorizontalFlip(),
