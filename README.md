@@ -9,6 +9,7 @@ This repository contains the code and resources for melanoma detection using adv
 - [Installation](#installation)
 - [Usage](#usage)
   - [Training the Models](#training-the-models)
+  - [Optional: Use Trained Models](#optional-use-trained-models)
   - [Dashboard](#dashboard)
 - [Training Your Own Model](#training-your-own-model)
 
@@ -70,6 +71,25 @@ python clip_Train.py
 Train ResNet-101:
 ```bash
 python ResNet_Train.py
+```
+
+### Optional: Use Trained Models
+If you do not wish to retrain the models, you can use the same trained models created during our study. 
+
+1. Open a Terminal:
+- Press Ctrl+Alt+T to open a terminal window.
+
+2. Navigate to the Directory:
+- Use the cd command to navigate to the directory where your .xz files are located. For example:
+```bash
+cd /Melanomaly/Models
+```
+
+3. Decompress Using xz:
+- Use the xz command with the -d option to decompress your files. For example:
+```bash
+xz -d best_clip_classifier.pth.xz
+xz -d best_resnet_classifer.pth.xz
 ```
 
 ### Dashboard
