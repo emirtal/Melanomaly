@@ -11,7 +11,6 @@ This repository contains the code and resources for melanoma detection using adv
   - [Training the Models](#training-the-models)
   - [Dashboard](#dashboard)
 - [Training Your Own Model](#training-your-own-model)
-- 
 
 ## Introduction
 
