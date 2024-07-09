@@ -83,7 +83,8 @@ If you do not wish to retrain the models, you can use the same trained models cr
    Navigate to the directory containing the file segments and run:
 
    ```bash
-   cat segment_* > large_file_reconstructed.tar
+   cat segment_* > best_clip_classifier.pth
+   cat segment_* > best_resnet_classifier.pth
 
 ### For Windows: 
 
